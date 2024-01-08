@@ -19,7 +19,7 @@ module.exports = (config, { strapi }) => {
     if (entryId) {
       entry = await strapi.entityService.findOne(
         // replace the next line with your proper content-type identifier
-        "api::restaurant.restaurant",
+        "api::event.event",
         entryId,
         { populate: "*" }
       );
