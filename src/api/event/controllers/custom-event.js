@@ -15,6 +15,7 @@ module.exports = createCoreController("api::event.event", ({ strapi }) => ({
     }
 
     const data = await strapi.entityService.findMany("api::event.event", {
+      populate: "*",
       filters: {
         user: user,
       },

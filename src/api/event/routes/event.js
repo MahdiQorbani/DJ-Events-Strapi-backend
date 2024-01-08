@@ -9,8 +9,10 @@ const { createCoreRouter } = require("@strapi/strapi").factories;
 module.exports = createCoreRouter("api::event.event", {
   config: {
     update: {
-      policies: ["is-owner"],
+      middlewares: ["api::event.is-owner"],
     },
-    delete: { policies: ["is-owner"] },
+    delete: {
+      middlewares: ["api::event.is-owner"],
+    },
   },
 });
